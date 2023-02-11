@@ -2,6 +2,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import { Container } from "@mui/material";
 import { CssBaseline } from "@mui/material";
+import HomePage from "./pages/HomePage";
 
 function App() {
     return (
@@ -9,11 +10,14 @@ function App() {
             <Header />
             <main>
                 <Container
-                    sx={{ paddingY: "1rem", paddingX: "5rem" }}
+                    sx={{
+                        paddingY: "1rem",
+                        paddingX: "5rem",
+                        maxWidth: "1200px",
+                    }}
                     disableGutters
-                    maxWidth={false}
                 >
-                    <h1>Welcome to ProShop</h1>
+                    <HomePage />
                 </Container>
             </main>
             <Footer />
