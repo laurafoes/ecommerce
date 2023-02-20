@@ -17,6 +17,7 @@ function App() {
                     }}
                     disableGutters
                 >
+                    <h1>Welcome to ProShop</h1>
                     <Outlet />
                 </Container>
             </main>

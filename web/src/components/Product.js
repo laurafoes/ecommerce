@@ -50,7 +50,10 @@ const Product = ({ product }) => {
                 <Typography
                     variant="body"
                     color="text.secondary"
-                    sx={{ display: "flex", alignItems: "center" }}
+                    sx={{
+                        display: "flex",
+                        alignItems: "center",
+                    }}
                 >
                     <Rating
                         name="half-rating"
