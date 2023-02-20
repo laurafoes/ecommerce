@@ -2,7 +2,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import { Container } from "@mui/material";
 import { CssBaseline } from "@mui/material";
-import HomePage from "./pages/HomePage";
+import { Outlet } from "react-router-dom";
 
 function App() {
     return (
@@ -17,7 +17,7 @@ function App() {
                     }}
                     disableGutters
                 >
-                    <HomePage />
+                    <Outlet />
                 </Container>
             </main>
             <Footer />

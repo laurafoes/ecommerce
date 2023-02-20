@@ -1,8 +1,9 @@
 import React from "react";
-import { grey, lightBlue } from "@mui/material/colors";
+import { blueGrey, grey } from "@mui/material/colors";
 import PersonIcon from "@mui/icons-material/Person";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { Container, Typography, Box, Link } from "@mui/material";
+import { Container, Typography, Box } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
@@ -11,7 +12,7 @@ const Header = () => {
                 disableGutters
                 maxWidth={false}
                 sx={{
-                    backgroundColor: lightBlue[300],
+                    backgroundColor: blueGrey[500],
                     width: "100vw",
                     height: "10vh",
                     paddingX: "5rem",
@@ -21,26 +22,30 @@ const Header = () => {
                 }}
             >
                 <Box>
-                    <Typography
-                        variant="h6"
-                        color={grey[900]}
-                        sx={{
-                            textTransform: "uppercase",
-                            letterSpacing: "0.5rem",
-                        }}
-                    >
-                        Proshop
-                    </Typography>
+                    <Link to="/" style={{ textDecoration: "none" }}>
+                        <Typography
+                            variant="h6"
+                            color={grey[900]}
+                            sx={{
+                                textTransform: "uppercase",
+                                letterSpacing: "0.5rem",
+                            }}
+                        >
+                            Proshop
+                        </Typography>
+                    </Link>
                 </Box>
-                <Box sx={{ display: "flex" }}>
+                <Box sx={{ display: "flex", gap: 3 }}>
                     <Link
-                        href="#"
+                        to="/cart"
                         underline="none"
-                        sx={{
+                        style={{
+                            color: "beige",
                             paddingX: "1rem",
                             fontWeight: "bold",
                             display: "flex",
                             alignItems: "center",
+                            textDecoration: "none",
                         }}
                     >
                         <ShoppingCartIcon
@@ -52,13 +57,15 @@ const Header = () => {
                         Cart
                     </Link>
                     <Link
-                        href="#"
+                        to="/login"
                         underline="none"
-                        sx={{
+                        style={{
+                            color: "beige",
                             paddingX: "1rem",
                             fontWeight: "bold",
                             display: "flex",
                             alignItems: "center",
+                            textDecoration: "none",
                         }}
                     >
                         <PersonIcon
