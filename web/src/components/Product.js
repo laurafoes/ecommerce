@@ -9,7 +9,6 @@ import {
 import { Link } from "react-router-dom";
 
 const Product = ({ product }) => {
-    console.log(product);
     return (
         <Card
             varian="outlined"
@@ -42,6 +41,7 @@ const Product = ({ product }) => {
                             letterSpacing: "0.15rem",
                             fontWeight: "bold",
                             marginBottom: 4,
+                            textDecoration: "none",
                         }}
                     >
                         {product.name}

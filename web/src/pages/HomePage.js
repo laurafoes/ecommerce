@@ -6,6 +6,7 @@ import products from "../products";
 const HomePage = () => {
     return (
         <>
+            <h1>Welcome to ProShop</h1>
             <Typography
                 variant="h6"
                 component="h1"
