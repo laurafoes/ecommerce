@@ -13,16 +13,27 @@ import {
     Typography,
 } from "@mui/material";
 import { blueGrey } from "@mui/material/colors";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import products from "../products";
+import axios from "axios";
 
 const ProductPage = () => {
     const productId = useParams();
-    const productFilter = products.filter((p) => {
-        return p._id === productId.id;
-    });
-    const product = productFilter[0];
+
+    const [product, setProduct] = useState({});
+
+    useEffect(() => {
+        const fetchProduct = async () => {
+            const { data } = await axios
+                .get(`http://localhost:5000/api/product/${productId.id}`)
+                .catch(function (error) {
+                    console.log(JSON.stringify(error));
+                });
+
+            setProduct(data);
+        };
+        fetchProduct();
+    }, [productId, product]);
 
     return (
         <div>
@@ -40,7 +51,7 @@ const ProductPage = () => {
                 </Button>
             </Link>
             <Container style={{ marginTop: "16px" }}>
-                <Grid container spacing={2}>
+                <Grid container spacing={4}>
                     <Grid item xs={12} md={6}>
                         <img
                             src={product.image}

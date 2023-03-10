@@ -1,9 +1,24 @@
 import { Grid, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Product from "../components/Product";
-import products from "../products";
+import axios from "axios";
 
 const HomePage = () => {
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            const { data } = await axios
+                .get("http://localhost:5000/api/products")
+                .catch(function (error) {
+                    console.log(JSON.stringify(error));
+                });
+
+            setProducts(data);
+        };
+        fetchProducts();
+    }, []);
+
     return (
         <>
             <h1>Welcome to ProShop</h1>
